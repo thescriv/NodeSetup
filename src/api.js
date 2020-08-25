@@ -2,6 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
+const { middleware } = require('./middleware')
+
 const routers = require('./routers')
 
 let server
@@ -12,6 +14,7 @@ async function startApi(port) {
 
   app.use(bodyParser.json())
   app.use(cors())
+  app.use(middleware())
 
   server = app.listen(port, () => {
     console.log(`Listening on port: "${port}"`)
