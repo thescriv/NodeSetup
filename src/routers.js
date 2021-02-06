@@ -1,4 +1,4 @@
-const { routerHelloWorld } = require('./route/HelloWorld')
+const { routerHelloWorld } = require('./route')
 
 module.exports = [
   {

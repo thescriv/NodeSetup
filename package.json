@@ -1,33 +1,35 @@
 {
-  "name": "",
+  "name": "nodeSetup",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r dotenv/config ./index.js",
-    "dev": "nodemon -r dotenv/config ./index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thescriv/NodeSetup.git"
+    "start": "node ./index.js",
+    "dev": "nodemon ./index.js",
+    "lint": "eslint ./src/**/*.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thescriv/NodeSetup/issues"
-  },
-  "homepage": "https://github.com/thescriv/NodeSetup#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "body-parser": "1.19.0",
+    "cors": "2.8.5",
+    "express": "4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "eslint": "7.19.0",
+    "husky": "4.3.8",
+    "nodemon": "2.0.4",
+    "prettier": "2.2.1",
+    "pretty-quick": "3.1.0"
   },
   "engines": {
     "node": "v14.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "npm run lint"
+    }
   }
 }

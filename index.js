@@ -1,6 +1,6 @@
 const { startApi, stopApi } = require('./src/api')
 
-const config = require('./config')
+const config = require('./src/config')
 
 async function start() {
   console.log('starting api')
